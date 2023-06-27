@@ -8,7 +8,7 @@ async function GetPeople(name) {
 }
 
 module.exports = {
-    //function: object - if object of function is equal the object, then don't is obligatory use the object
+    //function: object - if object of function is equal the function, then don't is obligatory use the object
     GetPeople
 }
 
