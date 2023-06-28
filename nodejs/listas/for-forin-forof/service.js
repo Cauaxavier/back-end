@@ -1,16 +1,16 @@
-const axios = require('axios')
-const URL = 'https://swapi.dev/api/people'
+const axios = require("axios");
+const URL = "https://swapi.dev/api/people";
 
 async function GetPeople(name) {
-   const url = `${URL}/?search=${name}&format=json`
-   const response = await axios.get(url)
-   return response.data
+  const url = `${URL}/?search=${name}&format=json`;
+  const response = await axios.get(url);
+  return response.data;
 }
 
 module.exports = {
-    //function: object - if object of function is equal the function, then don't is obligatory use the object
-    GetPeople
-}
+  // key: value - if value is equal the key, then don't is obligatory use the value.
+  GetPeople,
+};
 
 /*
 GetPeople('r2')

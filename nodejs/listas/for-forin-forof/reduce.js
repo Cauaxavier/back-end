@@ -20,7 +20,7 @@ async function main() {
     }, 0); // Get second value how value initial for if first value==null don't broken the program
     */
     const myList = [
-      ['caua', 'xavier'],
+      ['Cauã', 'Xavier'],
       ['love', 'programming']
     ];
 
@@ -28,7 +28,7 @@ async function main() {
       .myReduce((previous, next) => {
         return previous.concat(next);
       }, [])
-      .join("- ");
+      .join(" - ");
 
     console.log("total: ", result);
   } catch (error) {
