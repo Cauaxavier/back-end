@@ -47,3 +47,5 @@ describe("Star Wars Tests", function () {
     assert.deepEqual(result, expected);
   });
 });
+
+// for execute programme use: node node_modules/mocha/bin/mocha tests.js
