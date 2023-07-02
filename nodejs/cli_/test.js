@@ -9,11 +9,12 @@ const default_item_register = {
 };
 
 describe("heroes manipulation suite", () => {
+
   before(async () => {
     await database.register(default_item_register);
   });
 
-  it("must search a hero using the files", async () => {
+  it("Must search a hero using the files", async () => {
     const expected = default_item_register;
     const [result] = await database.list(expected.id);
 
@@ -26,6 +27,13 @@ describe("heroes manipulation suite", () => {
     const [actual] = await database.list(default_item_register.id);
 
     deepEqual(actual, expected);
+  });
+
+  it("Must remove hero by id", async () => {
+    const expected = true;
+    const result = await database.remove(default_item_register.id);
+
+    deepEqual(result, expected);
   });
 });
 

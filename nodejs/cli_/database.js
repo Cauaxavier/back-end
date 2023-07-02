@@ -40,6 +40,22 @@ class Database {
     const filtered_data = data.filter((item) => (id ? item.id === id : true));
     return filtered_data;
   }
+
+  async remove(id) {
+    if (!id) {
+      return await this.write_file([]);
+    }
+
+    const data = await this.getDataFile();
+    const index = data.findIndex((item) => item.id === parseInt(id));
+
+    if (index === -1) {
+      throw Error("The informed user don't exist.");
+    }
+
+    data.splice(index, 1);
+    return await this.write_file(data);
+  }
 }
 
 module.exports = new Database();
